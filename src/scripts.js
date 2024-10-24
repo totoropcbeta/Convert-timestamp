@@ -238,7 +238,8 @@ function getInterval() {
 refresh();
 inputInput.focus();
 
-inputInput.value = localStorage.selectText;
+resultInput.value = "";
+inputInput.value = "";
 change();
 
 loadGoonStatus();
