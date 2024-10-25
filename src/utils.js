@@ -35,7 +35,7 @@ function getTimeString(timestamp, type) {
     seconds = seconds < 10 ? "0" + seconds : seconds;
     milliseconds = milliseconds < 100 ? milliseconds < 10 ? "00" + milliseconds : "0" + milliseconds : milliseconds;
     let timeFormatSelected = localStorage.getItem("timeFormatSelected");
-    if (timeFormatSelected === undefined || timeFormatSelected === "yyyy-MM-dd HH:mm:ss") {
+    if (timeFormatSelected === null || timeFormatSelected === "yyyy-MM-dd HH:mm:ss") {
         return year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds + "." + milliseconds;
     } else if (timeFormatSelected === "yyyy-MM-dd") {
         return year + "-" + month + "-" + day;

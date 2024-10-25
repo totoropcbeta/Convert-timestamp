@@ -1,7 +1,7 @@
 let now;
 let goStatus = true;
 let interval;
-let gap = localStorage.getItem("gapValue") === undefined ? 1000 : localStorage.getItem("gapValue");
+let gap = localStorage.getItem("gapValue") === null ? 1000 : localStorage.getItem("gapValue");
 
 let msgSpan = document.getElementById("msg");
 
