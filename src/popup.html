@@ -8,7 +8,7 @@
 <style>
     /* 全局样式 */
     body {
-        font-family: "Microsoft YaHei", "Arial Narrow", sans-serif;
+        font-family: "Microsoft YaHei", "Arial", "Times New Roman", sans-serif;
         /* 使用现代字体 */
         background-color: #f7f7f7;
         /* 浅灰色背景 */
@@ -21,7 +21,8 @@
 
     /* 容器样式 */
     .tab {
-        min-width: 500px;
+        min-width: 450px;
+        height: auto;
         /* margin: 0 auto; */
         background: #fff;
         /* 白色背景 */
@@ -108,6 +109,14 @@
     #gap {
         max-width: 60px;
     }
+
+    .form-row select {
+        margin-right: 10px;
+        padding: 2px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+    }
 </style>
 
 <body>
@@ -148,16 +157,16 @@
             </div>
 
             <div>
-                <label for="show-alert-checkbox">右键菜单单击是否alert</label><input id="show-alert-checkbox" type="checkbox"
-                    name="menu-action">
+                <label for="show-alert-checkbox" style="line-height: 25px;">右键菜单单击是否alert</label><input
+                    id="show-alert-checkbox" type="checkbox" name="menu-action">
                 <br />
-                <label for="gap">刷新间隔</label>
-                <input id="gap" value="1000">
+                <label for="gap" style="line-height: 25px;">刷新间隔</label>
+                <input id="gap" value="1000" type="number" step="100" min="100">
 
                 <label for="goon">实时</label>
                 <input id="goon" type="checkbox">
                 <br />
-                <span>时间戳位数判断:</span>
+                <span style="line-height: 25px;">时间戳位数判断:</span>
                 <label for="only-10-radio">仅10位</label><input type="radio" id="only-10-radio"
                     name="timestamp-judge-type">
                 <label for="only-13-radio">丨仅13位</label><input type="radio" id="only-13-radio"
@@ -165,12 +174,20 @@
                 <label for="both-10-13-radio">丨10/13位</label><input type="radio" id="both-10-13-radio"
                     name="timestamp-judge-type">
             </div>
+            <div class="form-row">
+                <label for="time_format" style="line-height: 25px;">转换时间格式:</label>
+                <select id="time_format">
+                    <option value='yyyy-MM-dd HH:mm:ss' id="datetime">yyyy-MM-dd HH:mm:ss</option>
+                    <option value='yyyy-MM-dd' id="date">yyyy-MM-dd</option>
+                    <option value='yyyyMMdd' id="datekey">yyyyMMdd</option>
+                </select>
+            </div>
 
             <div>
-                <span id="tip">小提示：鼠标滚轮中键点击可以复制或者粘贴，年月日时分秒字符串的分隔符不限</span>
+                <span id="tip" style="line-height: 25px;">小提示：鼠标滚轮中键点击可以复制或者粘贴，年月日时分秒字符串的分隔符不限</span>
             </div>
             <div>
-                <span id="msg" style="margin-top: 50px;">　</span>
+                <span id="msg" style="line-height: 25px;">　</span>
             </div>
         </div>
         <script src="utils.js"></script>
